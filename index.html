@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slots</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="score-box">
+        <div class="score-box-item">Win: <span id='score' class="score-span">0</span></div>
+        <div class="bet-item">Bet: 
+            <span>
+                <label for="bet"></label>
+                <input type="range" class="bet-item" id="bet" value="50" min="50" max="200" step="25" 
+                    onchange="rangeSlide(this.value, Math.floor(this.value / 4) * 10)" 
+                    onmousemove="rangeSlide(this.value, Math.floor(this.value / 4) * 10)">
+                <span><div id="range-value">50</div></span>
+                <div class="possible-win">Possible Win: <span id='poss-win' class="possible-win-item"></span></div>
+            </span>
+        </div>
+        <div class="score-box-item">Money: <span id="money" class="score-span">99</span></div>                           
+    </div>
+    <div class="main-container">
+        <div class="box" id="box"></div>
+    </div>
+    <div class="spin-bar">
+        <button class="btn" id="my-btn">SPIN - 4 in a row to WIN</button>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
